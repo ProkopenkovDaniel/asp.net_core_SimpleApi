@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Список пользователей:</h2>
+    <div class="form">
+        <p>
+            <input type="hidden" id="personId">
+        </p>
+        <p>
+            Имя:
+            <input id="personName">
+        </p>
+        <p>
+            Возраст:
+            <input id = "personAge">
+        </p>
+    </div>
+    <table id = "personsTable">
+        <thead></thead>
+    </table>
+</body>
+    <script>
+        async function getPersons(){
+            const response = await fetch(
+                "/api/users",
+                {
+                    method: "GET",
+                    headers: {"Accept":"application/json"}
+                });
+            if(response.ok)
+                return response.json();
+        }
+
+        async function getPersonById(id){
+            const response = await fetch(
+                "/api/persons/" + id,
+                {
+                    method : "GET",
+                    headers : {"Accept":"application/json"}
+                }
+            );
+            if (response.ok)
+                return response.json();
+        }
+
+        async function addPerson(person){
+            const response = await fetch(
+                "/api/persons",
+                {
+                    method : "POST",
+                    headers : {"Accept" : "application/json", "Content-Type" : "application/json"},
+                    body : JSON.stringify({
+                        name : person.name,
+                        age : parseInt(person.age, 10)
+                    })
+                }
+            );
+            if (response.ok){
+                return response.json();
+            }
+        }
+
+        async function updatePerson(person){
+            const response = fetch(
+                "/api/persons",
+                {
+                    method : "PUT",
+                    headers : { "Accept" : "application/json", "Content-Type" : "application/json" },
+                    body : JSON.stringify({
+                        id : person.id,
+                        name : person.name,
+                        age : parseInt(person.age, 10)
+                    })
+                }
+            );
+            if (response.ok)
+                return response.json();
+        }
+
+        async function deletePersonById(id){
+            const response = fetch(
+                "/api/persons" + id,
+                {
+                    method : "DELETE",
+                    headers : { "Accept" : "application/json" }
+                }
+            );
+            if (response.ok){
+                return id;
+            }
+        }
+    </script>
+</html>

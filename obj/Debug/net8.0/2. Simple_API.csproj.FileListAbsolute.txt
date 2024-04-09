@@ -1,0 +1,25 @@
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\bin\Debug\net8.0\appsettings.Development.json
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\bin\Debug\net8.0\appsettings.json
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\bin\Debug\net8.0\2. Simple_API.exe
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\bin\Debug\net8.0\2. Simple_API.deps.json
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\bin\Debug\net8.0\2. Simple_API.runtimeconfig.json
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\bin\Debug\net8.0\2. Simple_API.dll
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\bin\Debug\net8.0\2. Simple_API.pdb
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.GeneratedMSBuildEditorConfig.editorconfig
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.AssemblyInfoInputs.cache
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.AssemblyInfo.cs
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.csproj.CoreCompileInputs.cache
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.MvcApplicationPartsAssemblyInfo.cache
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\staticwebassets.build.json
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\staticwebassets.development.json
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\staticwebassets\msbuild.2. Simple_API.Microsoft.AspNetCore.StaticWebAssets.props
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\staticwebassets\msbuild.build.2. Simple_API.props
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.2. Simple_API.props
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.2. Simple_API.props
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\staticwebassets.pack.json
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\scopedcss\bundle\2. Simple_API.styles.css
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.dll
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\refint\2. Simple_API.dll
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.pdb
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.genruntimeconfig.cache
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\ref\2. Simple_API.dll
