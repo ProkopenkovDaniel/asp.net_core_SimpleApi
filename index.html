@@ -19,21 +19,31 @@
             Возраст:
             <input id = "personAge">
         </p>
+
+        <p>
+            <button id = "saveBtn">Сохранить</button>
+            <button id = "clearBtn">Очистить</button>
+        </p>
     </div>
     <table id = "personsTable">
-        <thead></thead>
+        <thead>
+
+        </thead>
+        <tbody>
+
+        </tbody>
     </table>
 </body>
     <script>
         async function getPersons(){
             const response = await fetch(
-                "/api/users",
+                "/api/persons",
                 {
                     method: "GET",
                     headers: {"Accept":"application/json"}
                 });
             if(response.ok)
-                return response.json();
+                return await response.json();
         }
 
         async function getPersonById(id){
@@ -45,7 +55,8 @@
                 }
             );
             if (response.ok)
-                return response.json();
+                return await response.json();
+                
         }
 
         async function addPerson(person){
@@ -61,7 +72,7 @@
                 }
             );
             if (response.ok){
-                return response.json();
+                return await response.json();
             }
         }
 
@@ -79,7 +90,7 @@
                 }
             );
             if (response.ok)
-                return response.json();
+                return await response.json();
         }
 
         async function deletePersonById(id){
@@ -91,8 +102,95 @@
                 }
             );
             if (response.ok){
-                return id;
+                return await response.json();
             }
         }
+
+        function updateTable(persons){
+            const table = document.querySelector("tbody");
+            clearTable(table);
+
+            persons.forEach(person => {
+                table.append(createRow(person));
+            });
+        }
+
+        function clearTable(table){
+            const rows = table.querySelectorAll("tr");
+            rows.forEach(row => {
+                row.remove();
+            });
+        }
+
+        function createRow(person){
+            const tr = document.createElement("tr");
+            tr.setAttribute("data-rowid", person.id);
+
+            const tdName = document.createElement("td");
+            tdName.append(person.name);
+            tr.append(tdName);
+
+            const tdAge = document.createElement("td");
+            tdAge.append(person.age);
+            tr.append(tdAge);
+
+            const tdButtons = document.createElement("td");
+
+            const selectPersonButton = document.createElement("button");
+            selectPersonButton.append("выбрать");
+            selectPersonButton.addEventListener("click", () => selectPersonBtnClick(person.id));
+            tdButtons.append(selectPersonButton);
+
+            const deleteButton = dosument.createElement("button");
+            deleteButton.append("удалить");
+            deleteButton.addEventListener("click", () => deleteBtnClick(person.id));
+            tdButtons.append(deleteButton);
+
+            tr.append(tdButtons);
+        }
+
+        async function selectPersonBtnClick(personId){
+            const person = await getPersonById(personId);
+            fillPersonForm(person.id, person.name, person.age);
+        }
+
+        function fillPersonForm(id, name, age){
+            const idField = document.getElementById("personId");
+            idField.value = id;
+            const nameField = document.getElementById("personName");
+            nameField.value = name;
+            const ageField = document.getElementById("personAge");
+            ageField.value = age;
+        }
+
+        async function deleteBtnClick(personId){
+            await deletePersonById(personId);
+            updateTable(await getPersons());
+        }
+
+        async function saveBtnClick(){
+            let person = new Object();
+            person.id = document.getElementById("personId").value;
+            person.name = document.getElementById("personName").value;
+            person.age = document.getElementById("personAge").value;
+            
+            if (person.id != ""){
+                await updatePerson(person);
+            } else{
+                await addPerson(person);
+            }
+
+            updateTable(await getPersons());
+        }
+
+        async function clearBtnClick(){
+            fillPersonForm("", "", "");
+        }
+
+        document.getElementById("saveBtn").addEventListener("click", saveBtnClick);
+        document.getElementById("clearBtn").addEventListener("click", clearBtnClick);
+
+        updateTable(await getPersons());
+
     </script>
 </html>

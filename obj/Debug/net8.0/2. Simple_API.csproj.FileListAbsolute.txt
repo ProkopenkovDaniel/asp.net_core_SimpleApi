@@ -23,3 +23,4 @@ e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_A
 e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.pdb
 e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.genruntimeconfig.cache
 e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\ref\2. Simple_API.dll
+e:\!DOCUMENTS\Программирование\back-end\ASP.NET core\2. Simple_API\obj\Debug\net8.0\2. Simple_API.sourcelink.json

@@ -1,7 +1,18 @@
+using SimpleAPI;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", async (context) => {
+    context.Response.ContentType = "text/html; charset=utf-8";
+    await context.Response.SendFileAsync("index.html");
+    });
+    
+app.MapGet("/api/persons", SimpleAPIClass.GetAllPersons);
+app.MapGet("/api/persons/{id}", async(string id)=> await SimpleAPIClass.GetPersonById(id));
+app.MapPost("/api/persons", async(HttpContext context)=> await SimpleAPIClass.AddPersonById(context));
+app.MapDelete("/api/persons/{id}", async (string id)=>await SimpleAPIClass.DeletePersonById(id));
+app.MapPut("/api/persons", async(HttpContext context)=> await SimpleAPIClass.UpdatePersonById(context));
 
 app.Run();
 
@@ -10,43 +21,4 @@ public class Person
     public string Id {get; set;} = "";
     public string Name {get; set;} = "";
     public int Age {get; set;}
-}
-
-namespace SimpleAPI 
-{
-    using System.Text.RegularExpressions;
-
-    public static class SimpleAPI 
-    {
-        public static async Task AddPersonAPI(HttpContext context)
-        {
-            var request = context.Request;
-            var response = context.Response;
-            
-            var path = request.Path;
-
-            string rexForId = @"^$";
-        }
-
-        public static async Task GetAllPersons(){
-            new NotImplementedException();
-        }
-
-        public static async Task GetPersonById(string id){
-            new NotImplementedException();
-        }
-
-        public static async Task AddPersonById(Person person){
-            new NotImplementedException();
-        }
-
-        public static async Task DeletePersonById(string id){
-            new NotImplementedException();
-        }
-
-        public static async Task UpdatePersonById(string id, Person updatedPerson){
-            new NotImplementedException();
-        }
-    }
-
 }
